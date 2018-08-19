@@ -1,25 +1,46 @@
 <html>
 <head>
   <title>LinkDin</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
   <script src="app.js"></script>
 </head>
 <body>
   <div>
-    <h1>Welcome to LinkDin</h1>
+    <h1 class="title">Welcome to LinkDin</h1>
   </div>
-  <div>
-    <h5>Login</h5>
-    <form name="loginForm" action="home.html" onsubmit="return submitLogin()" method="post">
-      <label>Email :</label>
-      <input type="email" name="uEmail" placeholder="email" required/>
-      <br />
-      <br />
-      <label>Password :</label>
-      <input type="password" name="uPassword" placeholder="Password" required/>
-      <br />
-      <br />
-      <input type="submit" value="Submit">
-    </form>
+  <div class="userForms">
+    <div class="login">
+      <h2>Login</h2>
+      <form name="loginForm" action="home.html" onsubmit="return submitLogin()" method="post">
+        <label>Email :</label>
+        <input type="email" name="uEmail" placeholder="email" required/>
+        <br />
+        <br />
+        <label>Password :</label>
+        <input type="password" name="uPassword" placeholder="Password" required/>
+        <br />
+        <br />
+        <input type="submit" value="Login">
+      </form>
+    </div>
+    <div class="register">
+      <h2>Register</h2>
+      <form name="registerForm" action="home.html" onsubmit="return submitRegister()" method="post">
+        <label>Password :</label>
+        <input type="text" name="uName" placeholder="Password" required/>
+        <br />
+        <br />
+        <label>Email :</label>
+        <input type="email" name="uEmail" placeholder="email" required/>
+        <br />
+        <br />
+        <label>Password :</label>
+        <input type="password" name="uPassword" placeholder="Password" required/>
+        <br />
+        <br />
+        <input type="submit" value="Register">
+      </form>
+    </div>
   </div>
 </body>
 </html>

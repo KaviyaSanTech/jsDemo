@@ -1,0 +1,15 @@
+html body {
+  background: black;
+  color: white;
+}
+.title {
+  text-align: center;
+  color: grey;
+}
+.userForms {
+  display: flex;
+}
+.login, .register{
+  text-align: center;
+  width: 50%;
+}
