@@ -1,17 +1,16 @@
 <html>
 <head>
   <title>LinkDin</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
   <script src="app.js"></script>
 </head>
 <body>
   <div>
-    <h1 class="title">Welcome to LinkDin</h1>
+    <h1>Welcome to LinkDin</h1>
   </div>
-  <div class="userForms">
-    <div class="login">
+  <div>
+    <div>
       <h2>Login</h2>
-      <form name="loginForm" action="home.html" onsubmit="return submitLogin()" method="post">
+      <form name="loginForm" onsubmit="submitLogin()" method="post">
         <label>Email :</label>
         <input type="email" name="uEmail" placeholder="email" required/>
         <br />
@@ -23,15 +22,19 @@
         <input type="submit" value="Login">
       </form>
     </div>
-    <div class="register">
+    <div>
       <h2>Register</h2>
-      <form name="registerForm" action="home.html" onsubmit="return submitRegister()" method="post">
-        <label>Password :</label>
-        <input type="text" name="uName" placeholder="Password" required/>
+      <form name="registerForm" onsubmit="return submitRegister()" method="post">
+        <label>Name :</label>
+        <input type="text" name="uName" placeholder="Name" required/>
         <br />
         <br />
         <label>Email :</label>
         <input type="email" name="uEmail" placeholder="email" required/>
+        <br />
+        <br />
+        <label>Phone :</label>
+        <input type="number" name="uPhone" placeholder="Phone number" required/>
         <br />
         <br />
         <label>Password :</label>
