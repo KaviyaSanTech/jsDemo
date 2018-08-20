@@ -9,21 +9,29 @@
   </div>
   <div>
     <div>
-      <h2>Login</h2>
-      <form name="loginForm" onsubmit="submitLogin()" method="post">
+      <h2>Register</h2>
+      <form name="registerForm" onsubmit="return submitRegister()" method="post">
+        <label>Name :</label>
+        <input type="text" name="uName" placeholder="Name" required/>
+        <br />
+        <br />
         <label>Email :</label>
         <input type="email" name="uEmail" placeholder="email" required/>
+        <br />
+        <br />
+        <label>Phone :</label>
+        <input type="number" name="uPhone" placeholder="Phone number" required/>
         <br />
         <br />
         <label>Password :</label>
         <input type="password" name="uPassword" placeholder="Password" required/>
         <br />
         <br />
-        <input type="submit" value="Login">
+        <input type="submit" value="Register">
       </form>
     </div>
     <div>
-      <a href="register.html">New User ? Register Now.!</a>
+      <a href="index.html">Already Registered ? sign in now.!</a>
     </div>
   </div>
 </body>
