@@ -27,12 +27,6 @@ function submitLogin() {
 }
 
 function submitRegister() {
-  // event.preventDefault();
-  var userName = document.forms["registerForm"]["uName"].value;
-  var userEmail = document.forms["registerForm"]["uEmail"].value;
-  var userPhone = document.forms["registerForm"]["uPhone"].value;
-  var userPassword = document.forms["registerForm"]["uPassword"].value;
-  console.log(userEmail, userPassword, userPhone, userPassword);
 
   var con = new ActiveXObject("ADODB.Connection");
   var rs = new ActiveXObject("ADODB.Recordset");
@@ -41,10 +35,10 @@ function submitRegister() {
   rs.Open("Select * From userdata", con, 1, 3);
 
   rs.AddNew;
-  rs.Fields("user_name").value = userName;
-  rs.Fields("email").value = userEmail;
-  rs.Fields("phone").value = userPhone;
-  rs.Fields("password").value = userPassword;
+  rs.Fields("user_name").value = document.forms["registerForm"]["uName"].value;
+  rs.Fields("email").value = document.forms["registerForm"]["uEmail"].value;;
+  rs.Fields("phone").value = document.forms["registerForm"]["uPhone"].value;;
+  rs.Fields("password").value = document.forms["registerForm"]["uPassword"].value;;
   rs.Update;
 
   if(!rs.eof){
@@ -135,6 +129,65 @@ function loadProfiles() {
     document.write("<td width=100>" + rs(8).value + "</td>");
     document.write("<td width=100>" + rs(9).value + "</td>");
     document.write("<td width=100>" + rs(10).value + "</td>");
+    document.write("</tr>");
+    document.write("</table>");
+    rs.moveNext();
+  }
+}
+
+function submitJob() {
+
+  var con = new ActiveXObject("ADODB.Connection");
+  var rs = new ActiveXObject("ADODB.Recordset");
+
+  con.Open("Provider=Microsoft.Jet.OLEDB.4.0;Data Source='\db05.mdb'; Persist Security Info=False");
+  rs.Open("Select * From job", con, 1, 3);
+
+  rs.AddNew;
+  rs.Fields("c_name").value = document.forms["jobForm"]["cName"].value;
+  rs.Fields("location").value = document.forms["jobForm"]["cLocation"].value;;
+  rs.Fields("requirement").value = document.forms["jobForm"]["cRequirement"].value;;
+  rs.Fields("email").value = document.forms["jobForm"]["cEmail"].value;;
+  rs.Update;
+
+  if(!rs.eof){
+    alert("Job posted Successfully.!");
+    rs.Close();
+    con.Close();
+    location.href="home.html";
+  }else {
+    alert("Job post Failed.!");
+    rs.Close();
+    con.Close();
+  }
+  return false;
+}
+
+function loadJobs() {
+  console.log("Loading Jobs..");
+
+  var con = new ActiveXObject("ADODB.Connection");
+  var rs = new ActiveXObject("ADODB.Recordset");
+
+  con.Open("Provider=Microsoft.Jet.OLEDB.4.0;Data Source='\db05.mdb'; Persist Security Info=False");
+  rs.Open("Select * From job", con, 1, 3);
+  document.write("<h1 align='center'>LinkDin Jobs</h1>");
+  document.write("<table align='center' border=3>");
+  document.write("<tr width=100>");
+  document.write("<th width=100>Company Name</th>");
+  document.write("<th width=100>Location</th>");
+  document.write("<th width=100>Requirement</th>");
+  document.write("<th width=100>Email</th>");
+  document.write("</tr>");
+  document.write("</table>");
+  rs.moveFirst();
+  while(!rs.eof){
+    document.write("<table align='center' border=3>");
+    document.write("<tr width=100>");
+    document.write("<td width=100>" + rs(1).value + "</td>");
+    document.write("<td width=100>" + rs(2).value + "</td>");
+    document.write("<td width=100>" + rs(3).value + "</td>");
+    document.write("<td width=100>" + rs(4).value + "</td>");
     document.write("</tr>");
     document.write("</table>");
     rs.moveNext();
