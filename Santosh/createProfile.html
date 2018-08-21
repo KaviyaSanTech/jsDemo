@@ -1,0 +1,67 @@
+<html>
+<head>
+  <title>LinkDin</title>
+  <script src="app.js"></script>
+</head>
+<body style="text-align:center;">
+  <div>
+    <h1>LinkDin</h1>
+  </div>
+  <div>
+    <div>
+      <h2>Create Profile</h2>
+      <form name="profileForm" onsubmit="return submitProfile()" method="post">
+        <label>Name :</label>
+        <input type="text" name="pName" placeholder="Name" required/>
+        <br />
+        <br />
+        <label>Email :</label>
+        <input type="email" name="pEmail" placeholder="email" required/>
+        <br />
+        <br />
+        <label>Phone :</label>
+        <input type="number" name="pPhone" placeholder="Phone number" required/>
+        <br />
+        <br />
+        <label>Address :</label>
+        <textarea type="text" name="pAddress" placeholder="Address" required></textarea>
+        <br />
+        <br />
+        <h3>Educational Qualification</h3>
+        <h4>SSLC Qualification</h4>
+        <label>School/institution Name :</label>
+        <input type="text" name="pSSName" placeholder="School Name" required/>
+        <br />
+        <br />
+        <label>Final Percentage :</label>
+        <input type="number" name="pSSPercentage" placeholder="Percentage" required/>
+        <br />
+        <br />
+        <h4>HSC Qualification</h4>
+        <label>School/institution Name :</label>
+        <input type="text" name="pHSName" placeholder="School Name" required/>
+        <br />
+        <br />
+        <label>Final Percentage :</label>
+        <input type="number" name="pHSPercentage" placeholder="Percentage" required/>
+        <br />
+        <br />
+        <h4>Degree Qualification</h4>
+        <label>College/University Name :</label>
+        <input type="text" name="pUName" placeholder="School Name" required/>
+        <br />
+        <br />
+        <label>Course :</label>
+        <input type="text" name="pUCourse" placeholder="Course Name" required/>
+        <br />
+        <br />
+        <label>Final Percentage :</label>
+        <input type="number" name="pUPercentage" placeholder="Percentage" required/>
+        <br />
+        <br />
+        <input type="submit" value="Create Profile">
+      </form>
+    </div>
+  </div>
+</body>
+</html>
