@@ -23,6 +23,7 @@ function submitLogin() {
       con.Close();
     }
   }
+  return false;
 }
 
 function submitRegister() {
