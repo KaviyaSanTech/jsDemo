@@ -95,3 +95,48 @@ function submitProfile() {
   }
   return false;
 }
+
+function loadProfiles() {
+  console.log("Loading Profiles..");
+
+  var con = new ActiveXObject("ADODB.Connection");
+  var rs = new ActiveXObject("ADODB.Recordset");
+
+  con.Open("Provider=Microsoft.Jet.OLEDB.4.0;Data Source='\db05.mdb'; Persist Security Info=False");
+  rs.Open("Select * From profile", con, 1, 3);
+  document.write("<h1 align='center'>LinkDin Profiles</h1>");
+  document.write("<table align='center' border=3>");
+  document.write("<tr width=100>");
+  document.write("<th width=100>Name</th>");
+  document.write("<th width=100>Email</th>");
+  document.write("<th width=100>Phone</th>");
+  document.write("<th width=100>Address</th>");
+  document.write("<th width=100>SSLC School name</th>");
+  document.write("<th width=100>SSLC Percentage</th>");
+  document.write("<th width=100>HSC School name</th>");
+  document.write("<th width=100>HSC Percentage</th>");
+  document.write("<th width=100>College Name</th>");
+  document.write("<th width=100>Course</th>");
+  document.write("<th width=100>college Percentage</th>");
+  document.write("</tr>");
+  document.write("</table>");
+  rs.moveFirst();
+  while(!rs.eof){
+    document.write("<table align='center' border=3>");
+    document.write("<tr width=100>");
+    document.write("<td width=100>" + rs(1).value + "</td>");
+    document.write("<td width=100>" + rs(2).value + "</td>");
+    document.write("<td width=100>" + rs(3).value + "</td>");
+    document.write("<td width=100>" + rs(4).value + "</td>");
+    document.write("<td width=100>" + rs(5).value + "</td>");
+    document.write("<td width=100>" + rs(6).value + "</td>");
+    document.write("<td width=100>" + rs(7).value + "</td>");
+    document.write("<td width=100>" + rs(8).value + "</td>");
+    document.write("<td width=100>" + rs(8).value + "</td>");
+    document.write("<td width=100>" + rs(9).value + "</td>");
+    document.write("<td width=100>" + rs(10).value + "</td>");
+    document.write("</tr>");
+    document.write("</table>");
+    rs.moveNext();
+  }
+}
